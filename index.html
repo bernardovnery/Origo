@@ -1,0 +1,1002 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>ORIGO — Manual de Marca</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#0D1F3C;
+    --navy-deep:#08152B;
+    --gold:#C8960C;
+    --gold-soft:#E2B948;
+    --ivory:#F7F3EA;
+    --ivory-deep:#F2EFE8;
+    --paper:#FFFFFF;
+    --graphite:#2A2D33;
+    --line:rgba(13,31,60,0.12);
+    --line-strong:rgba(13,31,60,0.25);
+  }
+
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:'Inter',sans-serif;
+    background:var(--ivory);
+    color:var(--navy);
+    line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+    font-feature-settings:"ss01","cv11";
+  }
+
+  /* === NAV === */
+  .nav{
+    position:fixed;top:0;left:0;right:0;z-index:100;
+    background:rgba(247,243,234,0.85);
+    backdrop-filter:blur(20px);
+    -webkit-backdrop-filter:blur(20px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav-inner{
+    max-width:1400px;margin:0 auto;
+    padding:18px 48px;
+    display:flex;align-items:center;justify-content:space-between;
+  }
+  .nav-brand{
+    display:flex;align-items:center;gap:14px;
+    font-family:'Inter',sans-serif;
+    font-weight:600;font-size:18px;letter-spacing:3px;
+    color:var(--navy);
+  }
+  .nav-brand svg{width:32px;height:32px}
+  .nav-links{display:flex;gap:36px;list-style:none}
+  .nav-links a{
+    text-decoration:none;color:var(--navy);
+    font-size:12px;letter-spacing:2px;text-transform:uppercase;
+    font-weight:500;opacity:0.7;transition:opacity .3s;
+  }
+  .nav-links a:hover{opacity:1;color:var(--gold)}
+
+  /* === HERO === */
+  .hero{
+    min-height:100vh;
+    padding:140px 48px 80px;
+    max-width:1400px;margin:0 auto;
+    display:grid;grid-template-columns:1fr 1fr;gap:80px;
+    align-items:center;
+    position:relative;
+  }
+  .hero-text .eyebrow{
+    font-size:11px;letter-spacing:4px;text-transform:uppercase;
+    color:var(--gold);font-weight:500;margin-bottom:24px;
+    display:flex;align-items:center;gap:14px;
+  }
+  .eyebrow::before{
+    content:"";width:40px;height:1px;background:var(--gold);display:inline-block;
+  }
+  .hero h1{
+    font-family:'Cormorant Garamond',serif;
+    font-weight:400;
+    font-size:clamp(56px,8vw,112px);
+    line-height:0.95;letter-spacing:-1px;
+    margin-bottom:32px;color:var(--navy);
+  }
+  .hero h1 em{
+    font-style:italic;font-weight:300;
+    color:var(--gold);
+  }
+  .hero p.lede{
+    font-size:18px;line-height:1.7;
+    max-width:480px;color:var(--graphite);
+    margin-bottom:48px;font-weight:300;
+  }
+  .hero-meta{
+    display:flex;gap:48px;
+    padding-top:32px;border-top:1px solid var(--line);
+  }
+  .hero-meta div{font-size:12px}
+  .hero-meta .label{
+    color:var(--graphite);opacity:0.6;
+    letter-spacing:2px;text-transform:uppercase;
+    font-size:10px;margin-bottom:6px;
+  }
+  .hero-meta .val{font-family:'JetBrains Mono',monospace;font-size:13px;color:var(--navy)}
+
+  .hero-visual{
+    position:relative;display:flex;align-items:center;justify-content:center;
+  }
+  .diamond-stage{
+    width:100%;aspect-ratio:1;max-width:520px;
+    background:var(--paper);
+    border:1px solid var(--line);
+    position:relative;
+    display:flex;align-items:center;justify-content:center;
+    box-shadow:0 30px 80px -40px rgba(13,31,60,0.25);
+  }
+  .diamond-stage::before,
+  .diamond-stage::after{
+    content:"";position:absolute;width:24px;height:24px;
+    border:1px solid var(--gold);
+  }
+  .diamond-stage::before{top:-1px;left:-1px;border-right:none;border-bottom:none}
+  .diamond-stage::after{bottom:-1px;right:-1px;border-left:none;border-top:none}
+  .diamond-stage svg{width:70%;height:70%;animation:float 8s ease-in-out infinite}
+  @keyframes float{
+    0%,100%{transform:translateY(0) rotate(0)}
+    50%{transform:translateY(-12px) rotate(0.5deg)}
+  }
+  .stage-label{
+    position:absolute;bottom:-32px;left:0;
+    font-family:'JetBrains Mono',monospace;
+    font-size:10px;letter-spacing:2px;
+    color:var(--graphite);opacity:0.5;
+  }
+
+  /* === SECTION === */
+  section{padding:120px 48px;max-width:1400px;margin:0 auto}
+  .section-header{
+    display:grid;grid-template-columns:200px 1fr;gap:80px;
+    margin-bottom:80px;align-items:start;
+  }
+  .section-num{
+    font-family:'JetBrains Mono',monospace;
+    font-size:12px;color:var(--gold);letter-spacing:3px;
+    padding-top:18px;border-top:1px solid var(--gold);
+  }
+  .section-header h2{
+    font-family:'Cormorant Garamond',serif;
+    font-weight:400;font-size:clamp(40px,5vw,64px);
+    line-height:1.05;letter-spacing:-0.5px;
+    color:var(--navy);
+  }
+  .section-header h2 em{font-style:italic;color:var(--gold);font-weight:300}
+  .section-intro{
+    grid-column:2;font-size:17px;line-height:1.7;
+    color:var(--graphite);max-width:680px;margin-top:24px;
+    font-weight:300;
+  }
+
+  /* === COLOR SWATCHES === */
+  .colors-grid{
+    display:grid;grid-template-columns:repeat(4,1fr);gap:24px;
+  }
+  .swatch{
+    aspect-ratio:3/4;
+    padding:32px 28px;
+    display:flex;flex-direction:column;justify-content:space-between;
+    border:1px solid var(--line);
+    position:relative;overflow:hidden;
+    transition:transform .4s cubic-bezier(.2,.8,.2,1);
+  }
+  .swatch:hover{transform:translateY(-4px)}
+  .swatch-top{display:flex;justify-content:space-between;align-items:start}
+  .swatch-name{font-size:11px;letter-spacing:2px;text-transform:uppercase;font-weight:500}
+  .swatch-num{font-family:'JetBrains Mono',monospace;font-size:10px;opacity:0.6}
+  .swatch-meta{font-family:'JetBrains Mono',monospace;font-size:11px;line-height:1.8}
+  .swatch-meta div{display:flex;justify-content:space-between;border-top:1px solid currentColor;padding-top:4px;margin-top:4px;opacity:0.9}
+  .swatch-meta div:first-child{border-top:none;margin-top:0;padding-top:0;font-size:18px;letter-spacing:1px;margin-bottom:6px;opacity:1}
+
+  .swatch.navy{background:var(--navy);color:#fff}
+  .swatch.gold{background:var(--gold);color:#fff}
+  .swatch.ivory{background:var(--ivory-deep);color:var(--navy)}
+  .swatch.paper{background:var(--paper);color:var(--navy)}
+
+  /* === LOGO DISPLAY === */
+  .logo-grid{display:grid;grid-template-columns:1.4fr 1fr;gap:32px}
+  .logo-card{
+    background:var(--paper);
+    border:1px solid var(--line);
+    padding:64px 48px;
+    display:flex;flex-direction:column;align-items:center;justify-content:center;
+    position:relative;min-height:340px;
+    transition:border-color .3s;
+  }
+  .logo-card:hover{border-color:var(--gold)}
+  .logo-card.dark{background:var(--navy);color:#fff}
+  .logo-card.icon-only{background:var(--ivory-deep)}
+  .logo-card svg{max-width:100%;height:auto;max-height:200px}
+  .logo-card .caption{
+    position:absolute;bottom:20px;left:24px;right:24px;
+    display:flex;justify-content:space-between;align-items:center;
+    font-size:10px;letter-spacing:2px;text-transform:uppercase;
+    opacity:0.6;
+  }
+  .logo-card .download-btn{
+    font-family:'Inter',sans-serif;
+    font-size:10px;letter-spacing:1.5px;text-transform:uppercase;
+    padding:6px 14px;background:transparent;border:1px solid currentColor;
+    color:inherit;text-decoration:none;cursor:pointer;
+    transition:all .3s;
+  }
+  .logo-card .download-btn:hover{background:var(--gold);border-color:var(--gold);color:#fff}
+
+  /* === TYPOGRAPHY === */
+  .type-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px}
+  .type-card{
+    background:var(--paper);
+    border:1px solid var(--line);
+    padding:48px;
+    position:relative;
+  }
+  .type-card .type-meta{
+    display:flex;justify-content:space-between;align-items:center;
+    padding-bottom:24px;border-bottom:1px solid var(--line);
+    margin-bottom:32px;
+  }
+  .type-name{
+    font-size:11px;letter-spacing:2px;text-transform:uppercase;
+    color:var(--gold);font-weight:500;
+  }
+  .type-role{
+    font-family:'JetBrains Mono',monospace;
+    font-size:10px;opacity:0.5;
+  }
+  .type-sample-display{
+    font-family:'Cormorant Garamond',serif;
+    font-size:88px;font-weight:400;line-height:1;
+    letter-spacing:-2px;margin-bottom:8px;
+  }
+  .type-sample-display em{font-style:italic;color:var(--gold)}
+  .type-sample-text{
+    font-family:'Inter',sans-serif;font-size:14px;
+    line-height:1.6;color:var(--graphite);margin-top:24px;
+    font-weight:300;
+  }
+  .type-card.body .type-sample-display{
+    font-family:'Inter',sans-serif;font-weight:700;
+    font-size:72px;letter-spacing:-2px;
+  }
+  .type-weights{
+    display:flex;gap:24px;margin-top:20px;flex-wrap:wrap;
+    padding-top:20px;border-top:1px solid var(--line);
+  }
+  .type-weights span{
+    font-family:'JetBrains Mono',monospace;
+    font-size:10px;opacity:0.5;letter-spacing:1px;
+  }
+  .type-card .dl-link{
+    position:absolute;top:48px;right:48px;
+    font-size:10px;letter-spacing:1.5px;text-transform:uppercase;
+    color:var(--gold);text-decoration:none;
+    padding:6px 12px;border:1px solid var(--gold);
+    transition:all .3s;
+  }
+  .type-card .dl-link:hover{background:var(--gold);color:#fff}
+
+  /* === ICON SYSTEM === */
+  .icon-system{
+    display:grid;grid-template-columns:repeat(3,1fr);gap:24px;
+  }
+  .icon-tile{
+    aspect-ratio:1;
+    background:var(--paper);
+    border:1px solid var(--line);
+    display:flex;align-items:center;justify-content:center;
+    position:relative;
+  }
+  .icon-tile.dark{background:var(--navy)}
+  .icon-tile.gold{background:var(--gold)}
+  .icon-tile svg{width:55%;height:55%}
+  .icon-tile .label{
+    position:absolute;bottom:16px;left:20px;
+    font-size:10px;letter-spacing:2px;text-transform:uppercase;
+    opacity:0.6;
+  }
+  .icon-tile.dark .label,.icon-tile.gold .label{color:#fff;opacity:0.7}
+
+  /* === APPLICATIONS === */
+  .app-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:32px}
+  .app-card{
+    border:1px solid var(--line);
+    padding:48px;min-height:380px;
+    position:relative;overflow:hidden;
+    display:flex;flex-direction:column;justify-content:space-between;
+  }
+  .app-card.card-bg{
+    background:linear-gradient(135deg, var(--navy) 0%, var(--navy-deep) 100%);
+    color:#fff;
+  }
+  .app-card.card-bg .corners{position:absolute;inset:24px;border:1px solid rgba(255,255,255,0.15);pointer-events:none}
+  .app-mockup{
+    flex:1;display:flex;align-items:center;justify-content:center;
+    margin:24px 0;
+  }
+  .biz-card{
+    width:340px;height:200px;background:var(--ivory);
+    padding:24px;color:var(--navy);
+    display:flex;flex-direction:column;justify-content:space-between;
+    box-shadow:0 20px 50px -20px rgba(0,0,0,0.3);
+  }
+  .biz-card .top{display:flex;justify-content:space-between;align-items:start}
+  .biz-card .top svg{width:36px;height:36px}
+  .biz-card .name{
+    font-family:'Cormorant Garamond',serif;
+    font-size:22px;font-weight:500;
+  }
+  .biz-card .title{font-size:10px;letter-spacing:1.5px;text-transform:uppercase;opacity:0.6;margin-top:2px}
+  .biz-card .contact{font-family:'JetBrains Mono',monospace;font-size:9px;opacity:0.7;line-height:1.7}
+
+  .app-label{
+    font-size:11px;letter-spacing:2px;text-transform:uppercase;
+    color:var(--gold);font-weight:500;
+  }
+  .app-title{
+    font-family:'Cormorant Garamond',serif;
+    font-size:32px;font-weight:400;margin-top:8px;
+  }
+  .app-desc{font-size:13px;line-height:1.6;opacity:0.7;margin-top:8px;max-width:300px}
+
+  /* === MISUSE === */
+  .misuse-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+  .misuse-card{
+    aspect-ratio:1;background:var(--paper);
+    border:1px solid var(--line);padding:32px;
+    display:flex;flex-direction:column;align-items:center;justify-content:center;
+    position:relative;text-align:center;
+  }
+  .misuse-card svg{width:60%;height:60%;opacity:0.5}
+  .misuse-card.bad svg{opacity:0.4}
+  .misuse-card .x{
+    position:absolute;top:14px;right:14px;
+    width:24px;height:24px;border-radius:50%;
+    background:#B33;color:#fff;
+    display:flex;align-items:center;justify-content:center;
+    font-size:14px;font-weight:700;
+  }
+  .misuse-card .check{
+    position:absolute;top:14px;right:14px;
+    width:24px;height:24px;border-radius:50%;
+    background:#1a6e3a;color:#fff;
+    display:flex;align-items:center;justify-content:center;
+    font-size:14px;font-weight:700;
+  }
+  .misuse-card .caption{
+    position:absolute;bottom:16px;left:16px;right:16px;
+    font-size:10px;letter-spacing:1.5px;text-transform:uppercase;
+    opacity:0.6;
+  }
+  .misuse-card.tilt svg{transform:rotate(15deg)}
+  .misuse-card.stretch svg{transform:scaleX(1.4)}
+  .misuse-card.wrong-color svg *{stroke:#e74c3c !important}
+  .misuse-card.recolor svg *{stroke:#27ae60 !important}
+
+  /* === DOWNLOADS === */
+  .downloads{
+    background:var(--navy);color:#fff;
+    padding:120px 48px;
+  }
+  .downloads-inner{max-width:1400px;margin:0 auto}
+  .downloads .section-header h2,
+  .downloads .section-header h2 em{color:#fff}
+  .downloads .section-header h2 em{color:var(--gold-soft)}
+  .downloads .section-intro{color:rgba(255,255,255,0.7)}
+  .downloads .section-num{color:var(--gold-soft);border-top-color:var(--gold-soft)}
+
+  .download-list{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.08)}
+  .download-item{
+    background:var(--navy);
+    padding:32px 40px;
+    display:flex;align-items:center;justify-content:space-between;
+    gap:24px;transition:background .3s;
+    text-decoration:none;color:inherit;
+  }
+  .download-item:hover{background:var(--navy-deep)}
+  .download-item:hover .dl-arrow{transform:translateX(6px);color:var(--gold-soft)}
+  .di-info{flex:1;min-width:0}
+  .di-name{
+    font-size:16px;font-weight:500;margin-bottom:4px;
+  }
+  .di-meta{
+    font-family:'JetBrains Mono',monospace;
+    font-size:11px;opacity:0.5;letter-spacing:1px;
+  }
+  .di-format{
+    font-family:'JetBrains Mono',monospace;
+    font-size:10px;letter-spacing:2px;
+    padding:4px 10px;border:1px solid rgba(255,255,255,0.2);
+    color:var(--gold-soft);
+  }
+  .dl-arrow{transition:transform .3s,color .3s;font-size:18px;opacity:0.6}
+
+  /* === FOOTER === */
+  footer{
+    background:var(--navy-deep);color:#fff;
+    padding:80px 48px 40px;
+  }
+  .footer-inner{
+    max-width:1400px;margin:0 auto;
+    display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:64px;
+    padding-bottom:48px;border-bottom:1px solid rgba(255,255,255,0.1);
+  }
+  .footer-brand svg{width:48px;height:48px;margin-bottom:20px}
+  .footer-brand p{font-size:13px;opacity:0.6;line-height:1.7;max-width:340px;font-weight:300}
+  .footer-col h4{
+    font-size:10px;letter-spacing:3px;text-transform:uppercase;
+    color:var(--gold-soft);font-weight:500;margin-bottom:20px;
+  }
+  .footer-col p,.footer-col a{
+    font-size:13px;opacity:0.6;line-height:1.9;
+    text-decoration:none;color:#fff;display:block;
+  }
+  .footer-bottom{
+    max-width:1400px;margin:0 auto;padding-top:32px;
+    display:flex;justify-content:space-between;align-items:center;
+    font-size:11px;opacity:0.5;letter-spacing:1px;
+  }
+  .footer-bottom span{font-family:'JetBrains Mono',monospace}
+
+  /* === RESPONSIVE === */
+  @media (max-width: 960px){
+    .hero{grid-template-columns:1fr;gap:48px;padding-top:120px}
+    .section-header{grid-template-columns:1fr;gap:24px}
+    .section-intro{grid-column:1}
+    .colors-grid{grid-template-columns:repeat(2,1fr)}
+    .logo-grid,.type-grid,.app-grid{grid-template-columns:1fr}
+    .icon-system{grid-template-columns:repeat(2,1fr)}
+    .misuse-grid{grid-template-columns:repeat(2,1fr)}
+    .download-list{grid-template-columns:1fr}
+    .footer-inner{grid-template-columns:1fr}
+    .nav-inner{padding:16px 24px}
+    .nav-links{display:none}
+    section,.downloads{padding:80px 24px}
+  }
+
+  /* === REVEAL === */
+  .reveal{opacity:0;transform:translateY(24px);transition:opacity .9s,transform .9s}
+  .reveal.in{opacity:1;transform:none}
+
+  /* utility */
+  .divider{
+    height:1px;background:var(--line);
+    max-width:1400px;margin:0 auto;
+  }
+</style>
+</head>
+<body>
+
+<!-- ICON SVG SYMBOL (reusable) -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="origo-mark" viewBox="0 0 400 400">
+      <g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round">
+        <path d="M200 50 L120 120 L70 200 L120 300 L200 360 L280 300 L330 200 L280 120 Z" stroke-width="2.4"/>
+        <path d="M200 50 L155 130 L200 160 L245 130 Z"/>
+        <path d="M120 120 L155 130 L130 195 Z"/>
+        <path d="M280 120 L245 130 L270 195 Z"/>
+        <path d="M155 130 L130 195 L200 160 Z"/>
+        <path d="M245 130 L270 195 L200 160 Z"/>
+        <path d="M70 200 L130 195 L200 200 L270 195 L330 200" stroke-width="0.9" opacity="0.7"/>
+        <path d="M70 200 L130 195 L120 260 Z"/>
+        <path d="M130 195 L200 200 L170 270 L120 260 Z"/>
+        <path d="M120 260 L170 270 L200 360 Z"/>
+        <path d="M120 300 L120 260 L200 360 Z" opacity="0.85"/>
+        <path d="M330 200 L270 195 L280 260 Z"/>
+        <path d="M270 195 L200 200 L230 270 L280 260 Z"/>
+        <path d="M280 260 L230 270 L200 360 Z"/>
+        <path d="M280 300 L280 260 L200 360 Z" opacity="0.85"/>
+        <path d="M200 160 C 215 200, 185 230, 200 270 C 215 310, 195 335, 200 360" stroke-width="3.2" stroke-linecap="round"/>
+        <path d="M200 160 L170 270" stroke-width="0.7" opacity="0.6"/>
+        <path d="M200 160 L230 270" stroke-width="0.7" opacity="0.6"/>
+        <path d="M170 270 L200 360" stroke-width="0.7" opacity="0.6"/>
+        <path d="M230 270 L200 360" stroke-width="0.7" opacity="0.6"/>
+        <g stroke-width="0.45" opacity="0.55">
+          <path d="M125 135 L150 195"/><path d="M132 142 L155 198"/><path d="M140 150 L160 200"/><path d="M148 158 L165 200"/>
+          <path d="M85 205 L125 255"/><path d="M92 215 L128 260"/><path d="M100 225 L132 263"/><path d="M108 235 L138 266"/>
+        </g>
+        <g stroke-width="0.45" opacity="0.55">
+          <path d="M275 135 L250 195"/><path d="M268 142 L245 198"/><path d="M260 150 L240 200"/><path d="M252 158 L235 200"/>
+          <path d="M315 205 L275 255"/><path d="M308 215 L272 260"/><path d="M300 225 L268 263"/><path d="M292 235 L262 266"/>
+        </g>
+        <g stroke-width="0.45" opacity="0.55">
+          <path d="M170 75 L185 130"/><path d="M180 65 L195 130"/><path d="M220 65 L205 130"/><path d="M230 75 L215 130"/>
+        </g>
+      </g>
+    </symbol>
+  </defs>
+</svg>
+
+<!-- ====== NAV ====== -->
+<nav class="nav">
+  <div class="nav-inner">
+    <div class="nav-brand">
+      <svg style="color:var(--gold)"><use href="#origo-mark"/></svg>
+      ORIGO
+    </div>
+    <ul class="nav-links">
+      <li><a href="#identidade">Identidade</a></li>
+      <li><a href="#logo">Logotipo</a></li>
+      <li><a href="#cores">Cores</a></li>
+      <li><a href="#tipografia">Tipografia</a></li>
+      <li><a href="#aplicacoes">Aplicações</a></li>
+      <li><a href="#downloads">Downloads</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ====== HERO ====== -->
+<header class="hero">
+  <div class="hero-text reveal">
+    <div class="eyebrow">Manual de Marca · v1.0 · 2026</div>
+    <h1>O <em>brilho</em> está<br/>na origem.</h1>
+    <p class="lede">Diretrizes oficiais de identidade visual da ORIGO — infraestrutura institucional de tokenização para o agronegócio brasileiro. Este manual estabelece os padrões de uso da marca, garantindo consistência e excelência em toda aplicação.</p>
+    <div class="hero-meta">
+      <div>
+        <div class="label">Versão</div>
+        <div class="val">1.0.2026</div>
+      </div>
+      <div>
+        <div class="label">Origem</div>
+        <div class="val">Latim · Origo</div>
+      </div>
+      <div>
+        <div class="label">Token_ID</div>
+        <div class="val">0x4f3e…8a2</div>
+      </div>
+    </div>
+  </div>
+  <div class="hero-visual reveal">
+    <div class="diamond-stage">
+      <svg style="color:var(--gold)"><use href="#origo-mark"/></svg>
+      <div class="stage-label">ORIGO · ÍCONE ISOLADO</div>
+    </div>
+  </div>
+</header>
+
+<div class="divider"></div>
+
+<!-- ====== IDENTIDADE ====== -->
+<section id="identidade">
+  <div class="section-header reveal">
+    <div class="section-num">01 — ESSÊNCIA</div>
+    <div>
+      <h2>Identidade <em>visual</em>.</h2>
+      <p class="section-intro">A ORIGO traduz visualmente a transformação de ativos reais em produtos financeiros institucionais. Inspirada no processo de lapidação de diamantes — extração, estruturação, refinamento e distribuição — a identidade combina a tradição da economia nacional com a sofisticação da infraestrutura digital. Linhas geométricas precisas, paleta restrita e tipografia clássica refletem a solidez de redes distribuídas e a elegância dos mercados de capitais maduros.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ====== LOGO ====== -->
+<section id="logo">
+  <div class="section-header reveal">
+    <div class="section-num">02 — LOGOTIPO</div>
+    <div>
+      <h2>O <em>símbolo</em>.</h2>
+      <p class="section-intro">O símbolo ORIGO é construído sobre a forma de um diamante lapidado — referência à origem, ao valor estruturado e ao processo de refinamento. A curva central representa o fluxo de capital e a continuidade da letra "O". Disponível em três aplicações principais: primária (dourado sobre claro), reversa (sobre fundo navy) e monocromática.</p>
+    </div>
+  </div>
+
+  <div class="logo-grid reveal">
+    <div class="logo-card">
+      <svg viewBox="0 0 1200 400" style="width:100%;max-width:560px">
+        <g transform="translate(0,0)" style="color:var(--gold)">
+          <svg x="0" y="0" width="400" height="400"><use href="#origo-mark"/></svg>
+        </g>
+        <g fill="var(--navy)" font-family="Inter,sans-serif">
+          <text x="400" y="220" font-size="150" font-weight="700" letter-spacing="2">ORIGO</text>
+          <text x="402" y="265" font-size="32" font-weight="400" letter-spacing="3" opacity="0.85">Blockchain &amp; Tokenização</text>
+        </g>
+      </svg>
+      <div class="caption">
+        <span>Logotipo Primário</span>
+        <a class="download-btn" href="assets/origo-logo-horizontal.svg" download>Baixar SVG</a>
+      </div>
+    </div>
+
+    <div class="logo-card icon-only">
+      <svg style="color:var(--gold);width:62%;height:62%"><use href="#origo-mark"/></svg>
+      <div class="caption">
+        <span>Ícone Isolado</span>
+        <a class="download-btn" href="assets/origo-icone-dourado.svg" download>Baixar SVG</a>
+      </div>
+    </div>
+
+    <div class="logo-card dark">
+      <svg viewBox="0 0 1200 400" style="width:100%;max-width:560px">
+        <g style="color:#fff">
+          <svg x="0" y="0" width="400" height="400"><use href="#origo-mark"/></svg>
+        </g>
+        <g fill="#fff" font-family="Inter,sans-serif">
+          <text x="400" y="220" font-size="150" font-weight="700" letter-spacing="2">ORIGO</text>
+          <text x="402" y="265" font-size="32" font-weight="400" letter-spacing="3" opacity="0.85">Blockchain &amp; Tokenização</text>
+        </g>
+      </svg>
+      <div class="caption">
+        <span>Logotipo Reverso</span>
+        <a class="download-btn" href="assets/origo-logo-horizontal-reversa.svg" download>Baixar SVG</a>
+      </div>
+    </div>
+
+    <div class="logo-card" style="background:var(--ivory)">
+      <svg viewBox="0 0 600 800" style="width:100%;max-height:280px">
+        <g transform="translate(100 40)" style="color:var(--navy)">
+          <svg x="0" y="0" width="400" height="400"><use href="#origo-mark"/></svg>
+        </g>
+        <g fill="var(--navy)" font-family="Inter,sans-serif" text-anchor="middle">
+          <text x="300" y="600" font-size="120" font-weight="700" letter-spacing="2">ORIGO</text>
+          <text x="300" y="650" font-size="26" font-weight="400" letter-spacing="3" opacity="0.85">Blockchain &amp; Tokenização</text>
+        </g>
+      </svg>
+      <div class="caption">
+        <span>Logotipo Vertical · Monocromático</span>
+        <a class="download-btn" href="assets/origo-logo-vertical.svg" download>Baixar SVG</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====== ICON SYSTEM ====== -->
+<section>
+  <div class="section-header reveal">
+    <div class="section-num">02.1 — VARIAÇÕES</div>
+    <div>
+      <h2>Sistema de <em>ícone</em>.</h2>
+      <p class="section-intro">O ícone deve sempre manter integridade geométrica e área de proteção mínima. Aplicável em três tratamentos cromáticos: dourado institucional sobre fundo claro, branco sobre navy para mídia digital, e navy sólido para aplicações monocromáticas.</p>
+    </div>
+  </div>
+
+  <div class="icon-system reveal">
+    <div class="icon-tile">
+      <svg style="color:var(--gold)"><use href="#origo-mark"/></svg>
+      <div class="label">Dourado · #C8960C</div>
+    </div>
+    <div class="icon-tile dark">
+      <svg style="color:#fff"><use href="#origo-mark"/></svg>
+      <div class="label">Branco sobre Navy</div>
+    </div>
+    <div class="icon-tile">
+      <svg style="color:var(--navy)"><use href="#origo-mark"/></svg>
+      <div class="label">Navy · #0D1F3C</div>
+    </div>
+  </div>
+</section>
+
+<!-- ====== CORES ====== -->
+<section id="cores">
+  <div class="section-header reveal">
+    <div class="section-num">03 — CROMÁTICA</div>
+    <div>
+      <h2>Paleta <em>institucional</em>.</h2>
+      <p class="section-intro">A paleta combina a profundidade do navy financeiro com o brilho dourado da lapidação. Cores neutras complementares — marfim e papel — garantem amplo espaço respirável, característica fundamental de comunicação institucional. Esta restrição cromática é deliberada e deve ser mantida em todas as aplicações da marca.</p>
+    </div>
+  </div>
+
+  <div class="colors-grid reveal">
+    <div class="swatch navy">
+      <div class="swatch-top">
+        <span class="swatch-name">Navy Institucional</span>
+        <span class="swatch-num">01</span>
+      </div>
+      <div class="swatch-meta">
+        <div>#0D1F3C</div>
+        <div><span>RGB</span><span>13 · 31 · 60</span></div>
+        <div><span>CMYK</span><span>100 · 85 · 35 · 70</span></div>
+        <div><span>PMS</span><span>282 C</span></div>
+      </div>
+    </div>
+    <div class="swatch gold">
+      <div class="swatch-top">
+        <span class="swatch-name">Dourado Origo</span>
+        <span class="swatch-num">02</span>
+      </div>
+      <div class="swatch-meta">
+        <div>#C8960C</div>
+        <div><span>RGB</span><span>200 · 150 · 12</span></div>
+        <div><span>CMYK</span><span>22 · 38 · 100 · 8</span></div>
+        <div><span>PMS</span><span>124 C</span></div>
+      </div>
+    </div>
+    <div class="swatch paper">
+      <div class="swatch-top">
+        <span class="swatch-name">Papel</span>
+        <span class="swatch-num">03</span>
+      </div>
+      <div class="swatch-meta">
+        <div>#FFFFFF</div>
+        <div><span>RGB</span><span>255 · 255 · 255</span></div>
+        <div><span>CMYK</span><span>0 · 0 · 0 · 0</span></div>
+        <div><span>USO</span><span>Backgrounds</span></div>
+      </div>
+    </div>
+    <div class="swatch ivory">
+      <div class="swatch-top">
+        <span class="swatch-name">Marfim</span>
+        <span class="swatch-num">04</span>
+      </div>
+      <div class="swatch-meta">
+        <div>#F2EFE8</div>
+        <div><span>RGB</span><span>242 · 239 · 232</span></div>
+        <div><span>CMYK</span><span>3 · 3 · 8 · 0</span></div>
+        <div><span>USO</span><span>Superfícies</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====== TIPOGRAFIA ====== -->
+<section id="tipografia">
+  <div class="section-header reveal">
+    <div class="section-num">04 — TIPOGRAFIA</div>
+    <div>
+      <h2>Sistema <em>tipográfico</em>.</h2>
+      <p class="section-intro">A combinação tipográfica une uma serifa clássica de alta legibilidade — para títulos e momentos editoriais — a uma sans-serif neogrotesque para corpo de texto e dados. Esta dupla expressa simultaneamente a tradição dos mercados de capitais e a precisão da infraestrutura digital.</p>
+    </div>
+  </div>
+
+  <div class="type-grid reveal">
+    <div class="type-card">
+      <div class="type-meta">
+        <span class="type-name">Cormorant Garamond</span>
+        <span class="type-role">DISPLAY · EDITORIAL</span>
+      </div>
+      <a class="dl-link" href="https://fonts.google.com/specimen/Cormorant+Garamond" target="_blank" rel="noopener">Baixar ↗</a>
+      <div class="type-sample-display">Aa <em>Áá</em></div>
+      <div class="type-sample-text">Usada em títulos institucionais, citações, frases de marca e momentos editoriais. Transmite tradição, autoridade e elegância — características essenciais para comunicação com investidores e mercados de capitais.</div>
+      <div class="type-weights">
+        <span>LIGHT 300</span><span>REGULAR 400</span><span>MEDIUM 500</span><span>BOLD 700</span>
+      </div>
+    </div>
+
+    <div class="type-card body">
+      <div class="type-meta">
+        <span class="type-name">Inter</span>
+        <span class="type-role">CORPO · INTERFACE</span>
+      </div>
+      <a class="dl-link" href="https://fonts.google.com/specimen/Inter" target="_blank" rel="noopener">Baixar ↗</a>
+      <div class="type-sample-display">Aa Áá</div>
+      <div class="type-sample-text">Aplicada em corpo de texto, interfaces digitais, apresentações executivas, legendas e elementos funcionais. Substituto direto do Neue Haas Grotesk com licenciamento aberto e ampla disponibilidade técnica.</div>
+      <div class="type-weights">
+        <span>LIGHT 300</span><span>REGULAR 400</span><span>MEDIUM 500</span><span>SEMIBOLD 600</span><span>BOLD 700</span>
+      </div>
+    </div>
+
+    <div class="type-card" style="grid-column:1/-1;background:var(--navy);color:#fff">
+      <div class="type-meta" style="border-bottom-color:rgba(255,255,255,0.15)">
+        <span class="type-name" style="color:var(--gold-soft)">JetBrains Mono</span>
+        <span class="type-role" style="color:rgba(255,255,255,0.6)">DADOS · TOKEN_ID · CÓDIGO</span>
+      </div>
+      <a class="dl-link" href="https://fonts.google.com/specimen/JetBrains+Mono" target="_blank" rel="noopener" style="color:var(--gold-soft);border-color:var(--gold-soft)">Baixar ↗</a>
+      <div style="font-family:'JetBrains Mono',monospace;font-size:48px;font-weight:500;letter-spacing:-1px;margin:24px 0 8px">Token_ID: 0x4f3e…8a2</div>
+      <div class="type-sample-text" style="color:rgba(255,255,255,0.7)">Tipografia monoespaçada utilizada para identificadores de token, hashes, dados numéricos, metadados técnicos e elementos de infraestrutura blockchain. Reforça a precisão e a natureza programável dos ativos tokenizados pela ORIGO.</div>
+      <div class="type-weights" style="border-top-color:rgba(255,255,255,0.15)">
+        <span style="color:rgba(255,255,255,0.6)">REGULAR 400</span>
+        <span style="color:rgba(255,255,255,0.6)">MEDIUM 500</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====== APPLICATIONS ====== -->
+<section id="aplicacoes">
+  <div class="section-header reveal">
+    <div class="section-num">05 — APLICAÇÕES</div>
+    <div>
+      <h2>Marca em <em>contexto</em>.</h2>
+      <p class="section-intro">A identidade ORIGO foi desenhada para escala — desde apresentações institucionais para investidores e family offices até superfícies digitais, papelaria executiva e documentação técnica de produtos estruturados.</p>
+    </div>
+  </div>
+
+  <div class="app-grid reveal">
+    <div class="app-card card-bg">
+      <div class="corners"></div>
+      <div style="position:relative;z-index:1">
+        <div class="app-label">CARTÃO INSTITUCIONAL</div>
+        <div class="app-title" style="color:#fff">Papelaria executiva</div>
+        <div class="app-desc" style="color:rgba(255,255,255,0.6)">Aplicação em comunicação direta com investidores, parceiros estratégicos e contrapartes do mercado.</div>
+      </div>
+      <div class="app-mockup" style="position:relative;z-index:1">
+        <div class="biz-card">
+          <div class="top">
+            <svg style="color:var(--gold)"><use href="#origo-mark"/></svg>
+            <div style="text-align:right">
+              <div style="font-family:'Inter';font-weight:700;font-size:14px;letter-spacing:2px">ORIGO</div>
+              <div style="font-size:8px;letter-spacing:1.5px;opacity:0.6;margin-top:2px">BLOCKCHAIN &amp; TOKENIZAÇÃO</div>
+            </div>
+          </div>
+          <div>
+            <div class="name">Diretor Institucional</div>
+            <div class="title">Originação · Estruturação</div>
+            <div class="contact" style="margin-top:12px">
+              contato@origo.fin<br/>
+              +55 31 0000 0000<br/>
+              Belo Horizonte · MG
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="app-card" style="background:var(--paper)">
+      <div>
+        <div class="app-label">PITCH DECK</div>
+        <div class="app-title">Apresentação</div>
+        <div class="app-desc">Slides institucionais para apresentações a investidores, com hierarquia editorial rigorosa.</div>
+      </div>
+      <div class="app-mockup">
+        <div style="width:100%;max-width:340px;aspect-ratio:16/10;background:var(--navy);padding:24px;color:#fff;display:flex;flex-direction:column;justify-content:space-between;box-shadow:0 20px 50px -20px rgba(0,0,0,0.3)">
+          <div style="display:flex;justify-content:space-between;align-items:start">
+            <svg style="color:var(--gold);width:28px;height:28px"><use href="#origo-mark"/></svg>
+            <div style="font-family:'JetBrains Mono';font-size:8px;letter-spacing:2px;opacity:0.5">01 / 12</div>
+          </div>
+          <div>
+            <div style="font-family:'JetBrains Mono';font-size:8px;letter-spacing:2px;color:var(--gold-soft);margin-bottom:8px">TESE INSTITUCIONAL</div>
+            <div style="font-family:'Cormorant Garamond',serif;font-size:24px;line-height:1.05;font-weight:400">Originação para a <em style="color:var(--gold-soft)">economia tokenizada</em>.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====== MISUSE ====== -->
+<section>
+  <div class="section-header reveal">
+    <div class="section-num">06 — USOS INCORRETOS</div>
+    <div>
+      <h2>O que <em>evitar</em>.</h2>
+      <p class="section-intro">Para preservar a integridade da marca, certas aplicações são expressamente desencorajadas. A consistência geométrica e cromática é fundamental para a percepção institucional.</p>
+    </div>
+  </div>
+
+  <div class="misuse-grid reveal">
+    <div class="misuse-card tilt">
+      <div class="x">×</div>
+      <svg style="color:var(--gold)"><use href="#origo-mark"/></svg>
+      <div class="caption">Não rotacionar</div>
+    </div>
+    <div class="misuse-card stretch">
+      <div class="x">×</div>
+      <svg style="color:var(--gold)"><use href="#origo-mark"/></svg>
+      <div class="caption">Não distorcer</div>
+    </div>
+    <div class="misuse-card wrong-color">
+      <div class="x">×</div>
+      <svg><use href="#origo-mark"/></svg>
+      <div class="caption">Cores fora da paleta</div>
+    </div>
+    <div class="misuse-card">
+      <div class="check">✓</div>
+      <svg style="color:var(--gold)"><use href="#origo-mark"/></svg>
+      <div class="caption">Aplicação correta</div>
+    </div>
+  </div>
+</section>
+
+<!-- ====== DOWNLOADS ====== -->
+<div class="downloads" id="downloads">
+  <div class="downloads-inner">
+    <div class="section-header reveal">
+      <div class="section-num">07 — ARQUIVOS</div>
+      <div>
+        <h2>Central de <em>downloads</em>.</h2>
+        <p class="section-intro">Todos os arquivos da marca ORIGO em formato vetorial SVG — fundo transparente, escaláveis sem perda de qualidade. Para uso em apresentações, documentos, mídia digital e impressão.</p>
+      </div>
+    </div>
+
+    <div class="download-list reveal">
+      <a class="download-item" href="assets/origo-logo-horizontal.svg" download>
+        <div class="di-info">
+          <div class="di-name">Logo Horizontal · Primário</div>
+          <div class="di-meta">ORIGO + Tagline · Dourado/Navy</div>
+        </div>
+        <span class="di-format">SVG</span>
+        <span class="dl-arrow">↓</span>
+      </a>
+      <a class="download-item" href="assets/origo-logo-horizontal-reversa.svg" download>
+        <div class="di-info">
+          <div class="di-name">Logo Horizontal · Reversa</div>
+          <div class="di-meta">Para fundos escuros · Branco</div>
+        </div>
+        <span class="di-format">SVG</span>
+        <span class="dl-arrow">↓</span>
+      </a>
+      <a class="download-item" href="assets/origo-logo-vertical.svg" download>
+        <div class="di-info">
+          <div class="di-name">Logo Vertical</div>
+          <div class="di-meta">Composição centralizada · Dourado/Navy</div>
+        </div>
+        <span class="di-format">SVG</span>
+        <span class="dl-arrow">↓</span>
+      </a>
+      <a class="download-item" href="assets/origo-icone-dourado.svg" download>
+        <div class="di-info">
+          <div class="di-name">Ícone Isolado · Dourado</div>
+          <div class="di-meta">Símbolo · #C8960C</div>
+        </div>
+        <span class="di-format">SVG</span>
+        <span class="dl-arrow">↓</span>
+      </a>
+      <a class="download-item" href="assets/origo-icone-branco.svg" download>
+        <div class="di-info">
+          <div class="di-name">Ícone Isolado · Branco</div>
+          <div class="di-meta">Para fundos escuros · #FFFFFF</div>
+        </div>
+        <span class="di-format">SVG</span>
+        <span class="dl-arrow">↓</span>
+      </a>
+      <a class="download-item" href="assets/origo-icone-navy.svg" download>
+        <div class="di-info">
+          <div class="di-name">Ícone Isolado · Navy</div>
+          <div class="di-meta">Monocromático · #0D1F3C</div>
+        </div>
+        <span class="di-format">SVG</span>
+        <span class="dl-arrow">↓</span>
+      </a>
+      <a class="download-item" href="https://fonts.google.com/specimen/Cormorant+Garamond" target="_blank" rel="noopener">
+        <div class="di-info">
+          <div class="di-name">Tipografia · Cormorant Garamond</div>
+          <div class="di-meta">Display / Editorial · Google Fonts</div>
+        </div>
+        <span class="di-format">FONT</span>
+        <span class="dl-arrow">↗</span>
+      </a>
+      <a class="download-item" href="https://fonts.google.com/specimen/Inter" target="_blank" rel="noopener">
+        <div class="di-info">
+          <div class="di-name">Tipografia · Inter</div>
+          <div class="di-meta">Corpo / Interface · Google Fonts</div>
+        </div>
+        <span class="di-format">FONT</span>
+        <span class="dl-arrow">↗</span>
+      </a>
+      <a class="download-item" href="https://fonts.google.com/specimen/JetBrains+Mono" target="_blank" rel="noopener">
+        <div class="di-info">
+          <div class="di-name">Tipografia · JetBrains Mono</div>
+          <div class="di-meta">Dados / Token_ID · Google Fonts</div>
+        </div>
+        <span class="di-format">FONT</span>
+        <span class="dl-arrow">↗</span>
+      </a>
+      <a class="download-item" href="index.html" download>
+        <div class="di-info">
+          <div class="di-name">Manual Completo · HTML</div>
+          <div class="di-meta">Esta página · Versão offline</div>
+        </div>
+        <span class="di-format">HTML</span>
+        <span class="dl-arrow">↓</span>
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- ====== FOOTER ====== -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <svg style="color:var(--gold)"><use href="#origo-mark"/></svg>
+      <p>ORIGO origina, estrutura e refina ativos reais em produtos financeiros tokenizados de grau institucional. Belo Horizonte · Minas Gerais · Brasil.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Manual</h4>
+      <a href="#identidade">Identidade</a>
+      <a href="#logo">Logotipo</a>
+      <a href="#cores">Cores</a>
+      <a href="#tipografia">Tipografia</a>
+      <a href="#aplicacoes">Aplicações</a>
+    </div>
+    <div class="footer-col">
+      <h4>Contato</h4>
+      <p>contato@origo.fin</p>
+      <p>Belo Horizonte · MG</p>
+      <p>Brasil</p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div>© 2026 ORIGO · Todos os direitos reservados</div>
+    <span>BRAND_MANUAL_v1.0 · 0x4f3e…8a2</span>
+  </div>
+</footer>
+
+<script>
+  // Reveal on scroll
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}
+    });
+  },{threshold:0.12});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
+
+</body>
+</html>
