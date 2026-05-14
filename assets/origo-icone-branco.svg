@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" fill="none" stroke="#FFFFFF" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round">
+  <path d="M200 50 L120 120 L70 200 L120 300 L200 360 L280 300 L330 200 L280 120 Z" stroke-width="2.4"/>
+  <path d="M200 50 L155 130 L200 160 L245 130 Z"/>
+  <path d="M120 120 L155 130 L130 195 Z"/>
+  <path d="M280 120 L245 130 L270 195 Z"/>
+  <path d="M155 130 L130 195 L200 160 Z"/>
+  <path d="M245 130 L270 195 L200 160 Z"/>
+  <path d="M70 200 L130 195 L200 200 L270 195 L330 200" stroke-width="0.9" opacity="0.7"/>
+  <path d="M70 200 L130 195 L120 260 Z"/>
+  <path d="M130 195 L200 200 L170 270 L120 260 Z"/>
+  <path d="M120 260 L170 270 L200 360 Z"/>
+  <path d="M120 300 L120 260 L200 360 Z" opacity="0.85"/>
+  <path d="M330 200 L270 195 L280 260 Z"/>
+  <path d="M270 195 L200 200 L230 270 L280 260 Z"/>
+  <path d="M280 260 L230 270 L200 360 Z"/>
+  <path d="M280 300 L280 260 L200 360 Z" opacity="0.85"/>
+  <path d="M200 160 C 215 200, 185 230, 200 270 C 215 310, 195 335, 200 360" stroke-width="3.2" stroke-linecap="round"/>
+  <path d="M200 160 L170 270" stroke-width="0.7" opacity="0.6"/>
+  <path d="M200 160 L230 270" stroke-width="0.7" opacity="0.6"/>
+  <path d="M170 270 L200 360" stroke-width="0.7" opacity="0.6"/>
+  <path d="M230 270 L200 360" stroke-width="0.7" opacity="0.6"/>
+  <g stroke-width="0.45" opacity="0.55">
+    <path d="M125 135 L150 195"/><path d="M132 142 L155 198"/><path d="M140 150 L160 200"/><path d="M148 158 L165 200"/>
+    <path d="M85 205 L125 255"/><path d="M92 215 L128 260"/><path d="M100 225 L132 263"/><path d="M108 235 L138 266"/>
+  </g>
+  <g stroke-width="0.45" opacity="0.55">
+    <path d="M275 135 L250 195"/><path d="M268 142 L245 198"/><path d="M260 150 L240 200"/><path d="M252 158 L235 200"/>
+    <path d="M315 205 L275 255"/><path d="M308 215 L272 260"/><path d="M300 225 L268 263"/><path d="M292 235 L262 266"/>
+  </g>
+  <g stroke-width="0.45" opacity="0.55">
+    <path d="M170 75 L185 130"/><path d="M180 65 L195 130"/><path d="M220 65 L205 130"/><path d="M230 75 L215 130"/>
+  </g>
+</svg>
